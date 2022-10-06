@@ -1,4 +1,12 @@
 ---
+
+- name: "Destroy astia-smish.ml default conf"
+  file:
+    path: /etc/nginx/sites-available/astia-smish.ml
+    state: absent
+  tags:
+    - hard-remove
+
 - name: "Configure Nginx Routes"
   block:
     - name: "Configure Nginx Routes | Write nginx conf"
