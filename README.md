@@ -21,6 +21,14 @@ ansible-galaxy collection install -r infra/requirements.yml
 
 ## To configure server
 ansible-playbook main.yml
+
+# Install pip packages
+pip install -r requirements.txt
+
+# Restart demo and nginx
+systemctl restart demo
+systemctl restart nginx
+
 ```
 
 ## :alembic: Usage
