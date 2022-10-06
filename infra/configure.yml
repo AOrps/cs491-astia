@@ -2,9 +2,10 @@
 - name: "Configure Nginx Routes"
   block:
     - name: "Configure Nginx Routes | Write nginx conf"
-      blockinfile:
-        block: "{{ infra/nginx.conf }}"
+      template:
+        block: infra/nginx.conf
         path: /etc/nginx/sites-available/astia-smish.ml
+        create: yes
 
     - name: "Configure Nginx Routes | Create symbolic link"
       file:
@@ -15,8 +16,8 @@
         state: link
 
 - name: "Configure smish/index.html" 
-  blockinfile:
-    block: "{{ src/index.html }}"
+  template:
+    block: src/index.html
     path: /var/www/html/smish/index.html
     create: yes
 
