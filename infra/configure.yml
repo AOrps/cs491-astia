@@ -37,5 +37,14 @@
   template:
     src: demo.conf.j2
     dest: /lib/systemd/system/demo.service
+  tags: 
+    - systemd
+
+- name: "Open Hell's Gates"
+  ufw:
+    rule: allow
+    port: 8501
+  tags:
+    - systemd
 
 ...
