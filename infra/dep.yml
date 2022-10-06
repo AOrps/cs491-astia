@@ -6,9 +6,9 @@
   tags:
     - nginx
 
-- name: "Install python"
+- name: "Install python3"
   apt:
-    name: python
+    name: python3
     state: latest
   tags:
     - python
