@@ -3,8 +3,8 @@
   block:
     - name: "Configure Nginx Routes | Write nginx conf"
       template:
-        block: infra/nginx.conf
-        path: /etc/nginx/sites-available/astia-smish.ml
+        src: infra/nginx.conf
+        dest: /etc/nginx/sites-available/astia-smish.ml
         create: yes
 
     - name: "Configure Nginx Routes | Create symbolic link"
@@ -17,8 +17,8 @@
 
 - name: "Configure smish/index.html" 
   template:
-    block: src/index.html
-    path: /var/www/html/smish/index.html
+    src: src/index.html
+    dest: /var/www/html/smish/index.html
     create: yes
 
 - name: "Configure ufw for Openssh"
