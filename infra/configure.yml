@@ -20,4 +20,10 @@
     path: /var/www/html/smish/index.html
     create: yes
 
+- name: "Configure ufw for Openssh"
+  ufw:
+    rule: allow
+    name: OpenSSH
+    state: enabled
+
 ...
