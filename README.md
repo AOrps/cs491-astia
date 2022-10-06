@@ -17,7 +17,7 @@ sudo apt install -y ansible
 # Git Clone Repo and CD into it, then run:
 
 ## To Get Collections 
-ansible-galaxy collection install infra/requirements.yml
+ansible-galaxy collection install -r infra/requirements.yml
 
 ## To configure server
 ansible-playbook main.yml
