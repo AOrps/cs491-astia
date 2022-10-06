@@ -33,4 +33,9 @@
     name: OpenSSH
     state: enabled
 
+- name: "Systemd service"
+  template:
+    src: demo.conf.j2
+    dest: /lib/systemd/system/demo.service
+
 ...

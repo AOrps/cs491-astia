@@ -1,0 +1,12 @@
+[Unit]
+Description=demo
+
+[Service]
+User=root
+Type=simple
+Restart=always
+RestartSec=5s
+Execstart=/root/src/main.proxy_pass
+
+[Install]
+WantedBy=multi-user.target
