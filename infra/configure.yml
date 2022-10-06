@@ -6,6 +6,7 @@
     state: absent
   tags:
     - hard-remove
+    - nginx
 
 - name: "Configure Nginx Routes"
   block:
@@ -21,11 +22,15 @@
         owner: root
         group: root
         state: link
+  tags:
+    - nginx
 
 - name: "Configure smish/index.html" 
   template:
     src: index.html.j2
     dest: /var/www/html/smish/index.html
+  tags:
+    - nginx
 
 - name: "Configure ufw for Openssh"
   ufw:
@@ -33,18 +38,12 @@
     name: OpenSSH
     state: enabled
 
-- name: "Systemd service"
-  template:
-    src: demo.conf.j2
-    dest: /lib/systemd/system/demo.service
-  tags: 
-    - systemd
+# - name: "Systemd service"
+#   template:
+#     src: demo.conf.j2
+#     dest: /lib/systemd/system/demo.service
+#   tags: 
+#     - systemd
 
-- name: "Open Hell's Gates"
-  ufw:
-    rule: allow
-    port: 8501
-  tags:
-    - systemd
 
 ...
