@@ -7,7 +7,7 @@ server {
     }
 
     location /demo {
-        proxy_pass http://localhost:8501;
+        rewrite ^/demo(.*)$ https://tess-wqing-cs491-astia-streamlit-app-jxnwkj.streamlitapp.com/;
     }
 
     location /form {
