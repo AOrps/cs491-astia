@@ -1,0 +1,13 @@
+---
+-
+  name: "astia-smish setup"
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: "Install Dependencies"
+      include: infra/dep.yml
+    
+    - name: "Configure services"
+      include: infra/configure.yml
+...

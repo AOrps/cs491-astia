@@ -1,0 +1,22 @@
+---
+- name: "Configure Nginx Routes"
+  block:
+    - name: "Configure Nginx Routes | Write nginx conf"
+      blockinfile:
+        block: infra/nginx.conf
+        path: /etc/nginx/sites-available/astia-smish.ml
+
+    - name: "Configure Nginx Routes | Create symbolic link"
+      file:
+        src: /etc/nginx/sites-available/astia-smish.ml
+        dest: /etc/nginx/sites-enabled/astia-smish.ml
+        owner: root
+        group: root
+        state: link
+
+- name: "Configure smish/index.html" 
+  blockinfile:
+    block: src/index.html
+    path: /var/www/html/smish/index.html
+
+...

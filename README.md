@@ -1,5 +1,5 @@
-# Repo-Name
-- Description
+# cs491-astia
+- repo for portal
 
 ## :mag: Manual
 
@@ -8,6 +8,13 @@
 ```
 
 ## :hammer: How to Build
+```sh
+# Install ansible
+sudo apt install -y ansible
+
+# Git Clone Repo and CD into it, then run:
+ansible-playbook main.yml
+```
 
 ## :alembic: Usage
 
@@ -20,8 +27,8 @@
 ```s
 # Use tree to get a nicer graphical implementation 
 .
-├───dir1        ; explanation of dir1
-└───dir2        ; ---
+├───notes        ; notes for class
+└───dir2         ; ---
 ```
 
 ## :warning: Disclaimer
