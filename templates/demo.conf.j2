@@ -6,8 +6,8 @@ User=root
 Type=simple
 Restart=always
 RestartSec=5s
-ExecStart=/root/cs491-astia/src/main.py
-WorkingDirectory=/root/cs491-astia/src
+WorkingDirectory=/root/cs491-astia
+ExecStart=/usr/bin/python3 src/main.py
 
 [Install]
 WantedBy=multi-user.target
