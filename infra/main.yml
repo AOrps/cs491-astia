@@ -5,8 +5,8 @@
   become: yes
   tasks:
     - name: "Install Dependencies"
-      include: infra/dep.yml
+      include: plays/dep.yml
     
     - name: "Configure services"
-      include: infra/configure.yml
+      include: plays/configure.yml
 ...
