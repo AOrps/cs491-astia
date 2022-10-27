@@ -1,0 +1,8 @@
+{{ block "wireframes" . }}
+<h1 style="padding-top: 2.5%;" class="text-center">Wireframes</h1> 
+<ul>
+{{range . }}
+    <li><b>{{.Name}}</b>: <a href="{{.Url}}">{{.Url}}</a></li>
+{{end}}
+</ul>
+{{end}}
