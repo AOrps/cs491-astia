@@ -8,42 +8,27 @@
     - hard-remove
     - nginx
 
-- name: "Configure Nginx Routes"
-  block:
-    - name: "Configure Nginx Routes | Write nginx conf"
-      template:
-        src: nginx.conf.j2
-        dest: /etc/nginx/sites-available/astia-smish.ml
+# - name: "Configure Nginx Routes"
+#   block:
+#     - name: "Configure Nginx Routes | Write nginx conf"
+#       template:
+#         src: nginx.conf.j2
+#         dest: /etc/nginx/sites-available/astia-smish.ml
 
-    - name: "Configure Nginx Routes | Create symbolic link"
-      file:
-        src: /etc/nginx/sites-available/astia-smish.ml
-        dest: /etc/nginx/sites-enabled/astia-smish.ml
-        owner: root
-        group: root
-        state: link
-  tags:
-    - nginx
-
-- name: "Configure smish/index.html" 
-  template:
-    src: index.html.j2
-    dest: /var/www/html/smish/index.html
-  tags:
-    - nginx
+#     - name: "Configure Nginx Routes | Create symbolic link"
+#       file:
+#         src: /etc/nginx/sites-available/astia-smish.ml
+#         dest: /etc/nginx/sites-enabled/astia-smish.ml
+#         owner: root
+#         group: root
+#         state: link
+#   tags:
+#     - nginx
 
 - name: "Configure ufw for Openssh"
   ufw:
     rule: allow
     name: OpenSSH
     state: enabled
-
-# - name: "Systemd service"
-#   template:
-#     src: demo.conf.j2
-#     dest: /lib/systemd/system/demo.service
-#   tags: 
-#     - systemd
-
 
 ...

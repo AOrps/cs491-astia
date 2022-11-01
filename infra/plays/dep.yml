@@ -34,5 +34,31 @@
   tags:
     - certbot
     - nginx
-  
+
+- name: "Install Go 1.19.2 from source"
+  block:
+    - name: "Get Go Source"
+      get_url:
+        url: "https://go.dev/dl/go1.19.2.linux-amd64.tar.gz"
+        dest: /tmp/go1.19.2.tar.gz
+        checksum: sha256:5e8c5a74fe6470dd7e055a461acda8bb4050ead8c2df70f227e3ff7d8eb7eeb6
+
+    - name: "Remove old Go if it exists"
+      file:
+        path: /usr/local/go
+        state: absent
+        recurse: yes
+    
+    - name: "Extract Go to Destination"
+      unarchive: 
+        src: /tmp/go1.19.2.tar.gz
+        dest: /usr/local
+    
+    - name: "Add Go to $PATH"
+      replace:
+        path: /etc/environment
+        regexp: '(PATH="[A-Za-z/\/:]+)"'
+        replace: '\1:/usr/local/go/bin"'
+  tags:
+    - go
 ...
