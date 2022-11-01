@@ -40,8 +40,8 @@
       # if installed -> 1, otherwise -> 0
     - name: "Check if Go is installed"
       shell: 'go 2>&1 | grep "not found"'
-      register: go_exist
-      failed_when: 'go_exist.rc>=2'
+      register: gopkgExistence
+      failed_when: 'gopkgExistence.rc>=2'
 
     - name: "Get Go Source"
       get_url:
@@ -53,7 +53,7 @@
       file:
         path: /usr/local/go
         state: absent
-      when: go_exist.rc==1
+      when: gopkgExistence.rc==1
     
     - name: "Extract Go to Destination"
       unarchive: 
