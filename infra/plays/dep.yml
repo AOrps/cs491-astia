@@ -53,7 +53,6 @@
       file:
         path: /usr/local/go
         state: absent
-        recurse: yes
       when: go_exist.rc==1
     
     - name: "Extract Go to Destination"
@@ -66,6 +65,11 @@
         path: /etc/environment
         regexp: '(PATH="[A-Za-z/\/:]+)"'
         replace: '\1:/usr/local/go/bin"'
+
+    - name: "Remove /tmp Go artifact"
+      file:
+        path: /tmp/go1.19.2.tar.gz
+        statae: absent
   tags:
     - go
 ...
