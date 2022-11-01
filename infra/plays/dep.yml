@@ -41,6 +41,7 @@
     - name: "Check if Go is installed"
       shell: 'go 2>&1 | grep "not found"'
       register: go_exist
+      failed_when: 'go_exist.stdout==99'
 
     - name: "Get Go Source"
       get_url:
@@ -53,7 +54,7 @@
         path: /usr/local/go
         state: absent
         recurse: yes
-      when: go_exist.rc==0
+      when: go_exist.rc==1
     
     - name: "Extract Go to Destination"
       unarchive: 
