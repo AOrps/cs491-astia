@@ -17,6 +17,12 @@ type WireFrames struct {
 	Url  string
 }
 
+// func basePage(w http.ResponseWriter, r *http.Request) func() {
+// 	return func() {
+// 		fmt.Fprintf(w, "yes")
+// 	}
+// }
+
 func root(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/login", http.StatusSeeOther)
 }
@@ -50,28 +56,43 @@ func wireframe(w http.ResponseWriter, r *http.Request) {
 		{Name: "Tasin 3", Url: "https://web.njit.edu/~tan7/campaign.html"},
 	}
 
+	navs := []string{"attack", "target", "campaign"}
+
 	tpl := template.Must(template.ParseGlob("templates/*.html"))
 	tpl.ExecuteTemplate(w, "head", nil)
+	tpl.ExecuteTemplate(w, "nav", navs)
 	tpl.ExecuteTemplate(w, "wireframes", wfs)
 	tpl.ExecuteTemplate(w, "close", nil)
 }
 
-// func portal(w http.ResponseWriter, r *http.Request) {
-// 	tpl := template.Must(template.ParseGlob("templates/*.html"))
-// 	tpl.ExecuteTemplate(w, "head", nil)
-// 	tpl.ExecuteTemplate(w, "close", nil)
-// }
-
 func attack(w http.ResponseWriter, r *http.Request) {
+	navs := []string{"attack", "target", "campaign"}
 
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "head", nil)
+	tpl.ExecuteTemplate(w, "nav", navs)
+	tpl.ExecuteTemplate(w, "attack", nil)
+	tpl.ExecuteTemplate(w, "close", nil)
 }
 
 func targets(w http.ResponseWriter, r *http.Request) {
+	navs := []string{"attack", "target", "campaign"}
 
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "head", nil)
+	tpl.ExecuteTemplate(w, "nav", navs)
+	tpl.ExecuteTemplate(w, "targets", nil)
+	tpl.ExecuteTemplate(w, "close", nil)
 }
 
 func campaign(w http.ResponseWriter, r *http.Request) {
+	navs := []string{"attack", "target", "campaign"}
 
+	tpl := template.Must(template.ParseGlob("templates/*.html"))
+	tpl.ExecuteTemplate(w, "head", nil)
+	tpl.ExecuteTemplate(w, "nav", navs)
+	tpl.ExecuteTemplate(w, "campaign", nil)
+	tpl.ExecuteTemplate(w, "close", nil)
 }
 
 func main() {
