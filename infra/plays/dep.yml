@@ -69,7 +69,7 @@
     - name: "Remove /tmp Go artifact"
       file:
         path: /tmp/go1.19.2.tar.gz
-        statae: absent
+        state: absent
   tags:
     - go
 ...
