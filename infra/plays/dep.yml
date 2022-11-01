@@ -37,6 +37,11 @@
 
 - name: "Install Go 1.19.2 from source"
   block:
+      # if installed -> 1, otherwise -> 0
+    - name: "Check if Go is installed"
+      shell: 'go 2>&1 | grep "not found"'
+      register: go_exist
+
     - name: "Get Go Source"
       get_url:
         url: "https://go.dev/dl/go1.19.2.linux-amd64.tar.gz"
@@ -48,6 +53,7 @@
         path: /usr/local/go
         state: absent
         recurse: yes
+      when: go_exist.rc==0
     
     - name: "Extract Go to Destination"
       unarchive: 
