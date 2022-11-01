@@ -42,6 +42,8 @@
       shell: 'go 2>&1 | grep "not found"'
       register: go_exist
       failed_when: 'go_exist.rc==99'
+      args:
+        warn: false
 
     - name: "Get Go Source"
       get_url:
@@ -55,6 +57,8 @@
         state: absent
         recurse: yes
       when: go_exist.rc==1
+      args:
+        warn: false
     
     - name: "Extract Go to Destination"
       unarchive: 
