@@ -1,3 +1,33 @@
 {{ block "campaign" .}}
-<h1>Bar Graph will be here later</h1>
+<div class= "container" id="chart">
+    <h4>Result in Bar Graph</h1>
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  </div>
+  
+<script>
+    const myJSON = '{"UID": "49093094", "received": 100, "clicked":70, "credential_logged":45}';
+    const myObj = JSON.parse(myJSON);
+    var xValues = ["Received", "Clicked", "Credential Logged"];
+    var yValues = [myObj.received, myObj.clicked, myObj.credential_logged];
+    var barColors = ["red","orange","brown"];
+    
+    new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "Analytics Report"
+        }
+      }
+    });
+</script>
+
 {{end}}
