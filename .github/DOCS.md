@@ -1,3 +1,8 @@
 - https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
 - https://www.digitalocean.com/community/tutorials/how-to-deploy-a-go-web-application-using-nginx-on-ubuntu-18-04
 - https://stackoverflow.com/questions/43601359/how-do-i-serve-css-and-js-in-go
+- https://stackoverflow.com/questions/44253367/show-specific-section-of-html-code-based-on-radio-button
+- https://www.developer.com/languages/matrix-go-golang/
+- https://codepen.io/Manoz/pen/kyWvQw
+- https://codepen.io/Anna_Batura/pen/XNgjWB
+- https://stackoverflow.com/questions/50919193/hiding-showing-a-div-based-on-a-radio-button-css-only

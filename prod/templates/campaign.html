@@ -1,8 +1,47 @@
 {{ block "campaign" .}}
 <div class= "container" id="chart">
-    <h4>Result in Bar Graph</h1>
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  <div class="row">
+    <br>
+    <div class="col">
+      <h2>The Numbers</h2>
+      <br />
+      <h4>Received:</h4><p>100</p> 
+      <h4>Clicked:</h4><p>70</p> 
+      <h4>Credential Logged:</h4><p>40</p> 
+      <br />
+    </div>
+    <div class="col">
+      <h2>Result in Bar Graph</h2>
+      <br>
+      <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+    </div>
+    <div class="row">
+        <h2>The Targets</h2>
+        <div class="col mb-3">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Position</th>
+              <th>Email</th>
+              <th>Status</th>
+            </tr>
+            <!-- <th>Reports to</th> -->
+            {{range .}}
+            <tr>
+              <td>{{.Fullname}}</td>
+              <td>{{.Number}}</td>
+              <td>{{.Position}}</td>
+              <td>{{.Email}}</td>
+              <td>{{.Status}}</td>
+            </tr>
+            {{end}}
+  
+          </table>
+      </div>
+    </div>
   </div>
+
   
 <script>
     const myJSON = '{"UID": "49093094", "received": 100, "clicked":70, "credential_logged":45}';
@@ -29,5 +68,5 @@
       }
     });
 </script>
-
+</div>
 {{end}}

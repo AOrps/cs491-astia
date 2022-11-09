@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+
 	util "github.com/AOrps/cs491-astia/prod/util"
 )
 
@@ -112,8 +113,13 @@ func targets(w http.ResponseWriter, r *http.Request) {
 		{Name: "campaign 📍", Url: "campaign"},
 	}
 
-	users := []util.FakeUser
+	var users []util.FakeUser
 
+	for i := 0; i <= 20; i++ {
+		user := util.GenFakeUser()
+		fmt.Println(user)
+		users = append(users, user)
+	}
 
 	switch r.Method {
 	case "POST":
@@ -122,7 +128,7 @@ func targets(w http.ResponseWriter, r *http.Request) {
 	default:
 		tpl.ExecuteTemplate(w, "head", nil)
 		tpl.ExecuteTemplate(w, "nav", navs)
-		tpl.ExecuteTemplate(w, "targets", nil)
+		tpl.ExecuteTemplate(w, "targets", users)
 		tpl.ExecuteTemplate(w, "close", nil)
 	}
 }
@@ -135,6 +141,8 @@ func campaign(w http.ResponseWriter, r *http.Request) {
 		{Name: "campaign 📍", Url: "campaign"},
 	}
 
+	report := util.GenFakeReportList(20)
+
 	switch r.Method {
 	case "POST":
 		tpl.ExecuteTemplate(w, "head", nil)
@@ -142,7 +150,7 @@ func campaign(w http.ResponseWriter, r *http.Request) {
 	default:
 		tpl.ExecuteTemplate(w, "head", nil)
 		tpl.ExecuteTemplate(w, "nav", navs)
-		tpl.ExecuteTemplate(w, "campaign", nil)
+		tpl.ExecuteTemplate(w, "campaign", report)
 		tpl.ExecuteTemplate(w, "close", nil)
 	}
 }

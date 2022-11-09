@@ -1,10 +1,10 @@
 {{ block "targets" .}}
-<!-- Prompt for input from attacker -->
 <div class="container">
+  <!-- Prompt for input from attacker -->
   <div class="row">
     <div class="col">
       <div class="mb-3">
-        <br />
+        <br>
         <label for="formFileSm" class="form-label"><b>Choose a csv/xlsx file containing name and phone
             number:</b></label>
         <br>
@@ -15,56 +15,33 @@
     <div class="col">
     </div>
   </div>
-</div>
-<br>
-
-<!-- Render the name and phone number here -->
-<div class="container">
+  <br>
+  <!-- </div> -->
   <div class="row">
-    <div class="col">
-      <div class="mb-3">
+    <h2>Targets</h2>
+    <div class="col mb-3">
         <table class="table table-striped table-hover">
           <tr>
             <th>Name</th>
             <th>Phone Number</th>
-            <th>Position</th> 
-            <!-- <th>Reports to</th> -->
+            <th>Position</th>
             <th>Email</th>
           </tr>
+          <!-- <th>Reports to</th> -->
           {{range .}}
           <tr>
             <td>{{.Fullname}}</td>
             <td>{{.Number}}</td>
             <td>{{.Position}}</td>
-            <!-- <td>{{.ReportsTo}}</td> -->
             <td>{{.Email}}</td>
           </tr>
           {{end}}
-          <!-- <tr>
-            <td>Delores Flatt</td>
-            <td>7662035103</td>
-          </tr>
-          
-          <tr>
-            <td>Sol Olsen</td>
-            <td>2892749467</td>
-            <td>CEO</td>
-            <td>Eric Green</td>
-          </tr>
-
-          <tr>
-            <td>Delores Flatt</td>
-            <td>7662035103</td>
-          </tr>
-          
-          <tr>
-            <td>Delores Flatt</td>
-            <td>7662035103</td>
-          </tr> -->
 
         </table>
-      </div>
     </div>
   </div>
 </div>
+</div>
+</div>
+
 {{end}}
