@@ -3,7 +3,7 @@
 <div class="container" style="padding-top: 2.5%;">
   <!-- Template Column -->
   <div class="row">
-    <div class="col">
+    <div class="col-5">
       <h2>Attack Templates</h2>
       <br>
       <p>Select a template: </p>
@@ -16,7 +16,7 @@
       {{end}} -->
       <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Double Tap"
-          onClick="changeSrc()">
+          onClick="changeSrc(3)">
         <label class="form-check-label" for="flexRadioDefault1">
           Double Tap
         </label>
@@ -57,14 +57,19 @@
     </div>
     <!-- Preview Column -->
     
-    <div class="col">
+    <div class="col-7">
       <h2>Preview</h2>
       <br />
       <div class="phone-barrier">
         <div class="imessage">
           <!-- <p class="from-them"> kfjanskdfaskdjfa akjsdfksdanfknsdfkn</p> -->
-          <p class="from-me">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p class="from-them" id="flexRadioDefault5">yeah</p>
+          <!-- <p class="from-me">Lorem ipsum dolor sit amet...</p> -->
+          <p class="from-them" id="flexRadioDefault5" style="max-width: 280px;">
+            It is flu season, get your flu shot. If you are eligible for an updated COVID 19 booster,
+            you can get your flu shot at the same time. Visit <a href="#">covid.gov.astia-smish.ml/finder</a> to find 
+            a convenient location near you or Call us: NJDOH COVID 19 Hotline, <a href="#">855-568-0545</a>. Para recibir
+            este mensaje en espanol esponda 1. Reply STOP to opt out
+          </p>
           <!-- <p class="from-them">It&rsquo;s more like &ldquo;this is an earthquake. Check the Internet. Yup. Earthquake. This is the size. This is the epicenter. Check social media. Make sure the East Coast knows I&rsquo;m alive. Okay, try and go back to sleep.&rdquo;</p> -->
           <!-- <p class="from-me no-tail emoji">👍🏻</p> -->
           <!-- <p class="from-me">Glad you&rsquo;re safe</p> -->
@@ -76,7 +81,13 @@
     <br>
     <h2>Site Preview</h2>
     <br>
-    
+    <div class="col-4">
+      <p>Bruh</p>
+    </div>
+    <div class="col-8">
+      <p>Yo</p>
+    </div>
+
   </div>
 </div>
 {{end}}
