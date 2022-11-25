@@ -15,37 +15,37 @@
       </div>
       {{end}} -->
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Double Tap"
-          onClick="changeSrc(3)">
-        <label class="form-check-label" for="flexRadioDefault1">
+        <input class="form-check-input" type="radio" id="rad1" value="Double Tap"
+          onClick="changeSrc()">
+        <label class="form-check-label" for="rad1">
           Double Tap
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Sick Family"
+        <input class="form-check-input" type="radio" id="rad2" value="Sick Family"
           onClick="changeSrc()">
-        <label class="form-check-label" for="flexRadioDefault2">
+        <label class="form-check-label" for="rad2">
           Sick Family
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Sign in"
+        <input class="form-check-input" type="radio" id="rad3" value="Sign in"
           onClick="changeSrc()">
-        <label class="form-check-label" for="flexRadioDefault3">
+        <label class="form-check-label" for="rad3">
           Sign in
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="You Won"
+        <input class="form-check-input" type="radio" id="rad4" value="You Won"
           onClick="changeSrc()">
-        <label class="form-check-label" for="flexRadioDefault4">
+        <label class="form-check-label" for="rad4">
           You Won
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" value="Flu Season"
+        <input class="form-check-input" type="radio" id="rad5" value="Flu Season"
           onClick="changeSrc()" checked>
-        <label class="form-check-label" for="flexRadioDefault5">
+        <label class="form-check-label" for="rad5">
           Flu Season (Recommended)
         </label>
       </div>
@@ -60,7 +60,8 @@
     <div class="col-7">
       <h2>Preview</h2>
       <br />
-      <div class="phone-barrier">
+
+      <div class="phone-barrier" id="rad5">
         <div class="imessage">
           <!-- <p class="from-them"> kfjanskdfaskdjfa akjsdfksdanfknsdfkn</p> -->
           <!-- <p class="from-me">Lorem ipsum dolor sit amet...</p> -->
@@ -77,17 +78,27 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <br>
-    <h2>Site Preview</h2>
-    <br>
-    <div class="col-4">
-      <p>Bruh</p>
-    </div>
-    <div class="col-8">
-      <p>Yo</p>
-    </div>
+  <!-- START of Emulation -->
+  <div>
+</div>
+{{end}}
 
+{{block "emulatesite" . }}
+<div class="row">
+  <br>
+  <h2>Site Preview</h2>
+  <br>
+  <div class="col-4">
+    <p>Bruh</p>
   </div>
+  <div class="col-8">
+    <!-- START of MANAGE -->
+    <div style="background: #20300a;">
+      <p>Yes</p>
+    </div>
+    <!-- END of MANAGE -->
+  </div>
+</div>
+<!-- End of Emulation -->
 </div>
 {{end}}

@@ -100,6 +100,7 @@ func attack(w http.ResponseWriter, r *http.Request) {
 		tpl.ExecuteTemplate(w, "head", nil)
 		tpl.ExecuteTemplate(w, "nav", navs)
 		tpl.ExecuteTemplate(w, "attack", attackTemplates)
+		tpl.ExecuteTemplate(w, "emulatesite", nil)
 		tpl.ExecuteTemplate(w, "close", nil)
 	}
 
@@ -117,7 +118,7 @@ func targets(w http.ResponseWriter, r *http.Request) {
 
 	for i := 0; i <= 20; i++ {
 		user := util.GenFakeUser()
-		fmt.Println(user)
+		// fmt.Println(user)
 		users = append(users, user)
 	}
 

@@ -6,3 +6,4 @@
 - https://codepen.io/Manoz/pen/kyWvQw
 - https://codepen.io/Anna_Batura/pen/XNgjWB
 - https://stackoverflow.com/questions/50919193/hiding-showing-a-div-based-on-a-radio-button-css-only
+- `attack` and `emulatesite` template are in one place
