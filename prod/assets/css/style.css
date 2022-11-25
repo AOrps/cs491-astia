@@ -1,6 +1,7 @@
 .imessage {
   background-color: #fff;
   border: 1px solid #e5e5ea;
+  /* border: 1px solid #cacace; */
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -68,13 +69,17 @@ p.from-me~p.from-me:last-child {
 
 p.from-them {
   align-items: flex-start;
-  background-color: #e5e5ea;
+  /* background-color: #e5e5ea; */
+  /* background-color: #cacace;  */
+  background-color: #d8d8db; 
   color: #000;
 }
 
 p.from-them:before {
   border-bottom-right-radius: 0.8rem 0.7rem;
-  border-left: 1rem solid #e5e5ea;
+  /* border-left: 1rem solid #e5e5ea; */
+  /* border-left: 1rem solid #cacace; */
+  border-left: 1rem solid #d8d8db;
   left: -0.35rem;
   transform: translate(0, -0.1rem);
 }

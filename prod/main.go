@@ -89,11 +89,24 @@ func attack(w http.ResponseWriter, r *http.Request) {
 	attackTemplates["Double Tap"] = "You have been selected to win: Click here"
 	attackTemplates["Sick Family"] = "You have someone sick in the family. "
 	attackTemplates["Sign in"] = "A computer from a suspicious IP has signed into your gmail account, click here if not you"
-	attackTemplates["You Won"] = "You won an aware. Click here if you want to see the terms and conditions."
+	attackTemplates["You Won"] = "You won an award. Click here if you want to see the terms and conditions."
 	attackTemplates["Flu Season"] = "It is flu season, get your flu shot. If you are eligible for an updated COVID 19 booster, you can get your flu shot at the same time. Visit covid.gov.astia-smish.ml/finder to find a convenient location near you or Call us: NJDOH COVID 19 Hotline, 855-568-0545. Para recibir este mensaje en espanol esponda 1. Reply STOP to opt out"
 
 	switch r.Method {
 	case "POST":
+		err := r.ParseForm()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// Full Debug
+		// for key, value := range r.Form {
+		// 	fmt.Printf("%s = %s\n", key, value)
+		// }
+
+		template := r.Form.Get("template")
+		fmt.Printf("template = %s\n", template)
+
 		tpl.ExecuteTemplate(w, "head", nil)
 		tpl.ExecuteTemplate(w, "close", nil)
 	default:
@@ -168,6 +181,6 @@ func main() {
 
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
-	fmt.Printf("Started web server at:  http://localhost:%s", port)
+	fmt.Printf("Started web server at:  http://localhost:%s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
