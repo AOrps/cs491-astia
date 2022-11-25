@@ -78,27 +78,16 @@
       </div>
     </div>
   </div>
-  <!-- START of Emulation -->
-  <div>
-</div>
-{{end}}
-
-{{block "emulatesite" . }}
-<div class="row">
-  <br>
-  <h2>Site Preview</h2>
-  <br>
-  <div class="col-4">
-    <p>Bruh</p>
-  </div>
-  <div class="col-8">
-    <!-- START of MANAGE -->
-    <div style="background: #20300a;">
-      <p>Yes</p>
+  <div class="row">
+    <br>
+    <h2>Site Preview</h2>
+    <br>
+    <div class="col-4">
+      <p>Bruh</p>
     </div>
-    <!-- END of MANAGE -->
+    <div class="col-8" style="border-style: dotted;">
+      {{template "emulatesite" .}}
+    </div>
   </div>
-</div>
-<!-- End of Emulation -->
 </div>
 {{end}}

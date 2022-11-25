@@ -100,7 +100,6 @@ func attack(w http.ResponseWriter, r *http.Request) {
 		tpl.ExecuteTemplate(w, "head", nil)
 		tpl.ExecuteTemplate(w, "nav", navs)
 		tpl.ExecuteTemplate(w, "attack", attackTemplates)
-		tpl.ExecuteTemplate(w, "emulatesite", nil)
 		tpl.ExecuteTemplate(w, "close", nil)
 	}
 

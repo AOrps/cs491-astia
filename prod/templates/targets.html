@@ -26,14 +26,15 @@
             <th>Phone Number</th>
             <th>Position</th>
             <th>Email</th>
+            <th>Reports to</th>
           </tr>
-          <!-- <th>Reports to</th> -->
           {{range .}}
           <tr>
             <td>{{.Fullname}}</td>
             <td>{{.Number}}</td>
             <td>{{.Position}}</td>
             <td>{{.Email}}</td>
+            <td>{{.Fullname}}</td>
           </tr>
           {{end}}
 
