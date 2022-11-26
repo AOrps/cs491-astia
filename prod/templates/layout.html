@@ -35,7 +35,7 @@
 <body style="font-family: monospace;">
     {{end}}
 
-    {{ block "nav" .}}
+{{ block "nav" .}}
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <ul class="navbar-nav">
@@ -45,12 +45,24 @@
             </ul>
         </div>
     </nav>
-    {{end}}
+{{end}}
 
-    {{ block "close" .}}
-    <footer id="footer" style="margin-top: 2rem;">
-        <p>FOOT</p>
-    </footer>
+{{ block "close" .}}
+<!-- <img class="img-fluid" style="padding: 8px 15px 5px 15px; height: 70px;"> -->
+<footer id="footer" style="margin-top: 2rem; text-align: center;">
+    <div class="row" style="padding-top: 1rem; padding-bottom:2rem; max-width: 100%;">
+        <h5 style="margin-top: 1rem;">Astia - Smish</h5>
+        <div class="col" style="text-align: right;">
+            <a target="_blank" href="https://github.com/AOrps/cs491-astia"><img class="img-fluid" style="height: 40px;" src="https://jerseyctf.com/assets/img/github-logo.png" alt="Github Repo"></a>
+        </div>
+        <div class="col">
+            <a target="_blank" href="https://gitlab.com/astia"><img class="img-fluid" style="height: 40px;" src="https://about.gitlab.com/images/press/press-kit-icon.svg" alt="Gitlab Enterprise Repo"></a>
+        </div>
+        <div class="col" style="text-align: left;">
+            <a target="_blank" href="/wf"><img class="img-fluid" style="height: 40px;" src="assets/img/wf.png" alt="Wireframes"></a>
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

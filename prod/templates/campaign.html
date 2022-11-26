@@ -15,6 +15,38 @@
       <br>
       <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
     </div>
+
+    <div class="row text-center" id="ViewSwitcher" style="margin: 2rem 0rem;">
+      <div class="col">
+        <h3>View Switcher</h3>
+      </div>
+      <div class="col">
+        <!-- <div class="row" style="padding-right: 2rem;"> -->
+          <!-- <div class="col">List</div> -->
+          <!-- <div class="col">
+            <div class='row-switch'>
+              <div class='cell-switch'>
+                  <div class="switch">
+                      <input type="radio" class="switch-input" name="switch" value="Mensuel" id="mensuel">
+                      <label for="mensuel" class="switch-label switch-label-off">Mensuel</label>
+                      <input type="radio" class="switch-input" name="switch" value="Annuel" id="annuel">
+                      <label for="annuel" class="switch-label switch-label-on">Annuel</label>
+                      <span class="slider"></span>
+                  </div>
+              </div>
+          </div>
+          </div> -->
+          <input type="checkbox" id="checkbox" class="switch__checkbox" /> 
+          <label class="switch__label" for="checkbox">
+            <span>List</span>
+            <span>Graph Theory</span>
+          </label>
+
+          <!-- <div class="col">Graph Theory</div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+
     <div class="row">
         <h2>Target Status</h2>
         <div class="col mb-3">
@@ -24,15 +56,16 @@
               <th>Phone Number</th>
               <th>Position</th>
               <th>Email</th>
+              <th>Reports to</th>
               <th>Status</th>
             </tr>
-            <!-- <th>Reports to</th> -->
             {{range .}}
             <tr>
               <td>{{.Fullname}}</td>
               <td>{{.Number}}</td>
               <td>{{.Position}}</td>
               <td>{{.Email}}</td>
+              <td>{{.Fullname}}</td>
               <td>{{.Status}}</td>
             </tr>
             {{end}}
@@ -41,9 +74,8 @@
       </div>
     </div>
   </div>
-
   
-<script>
+  <script>
     const myJSON = '{"UID": "49093094", "received": 100, "clicked":70, "credential_logged":45}';
     const myObj = JSON.parse(myJSON);
     var xValues = ["", "Received", "Clicked", "Credential Logged"];
@@ -67,6 +99,7 @@
         }
       }
     });
-</script>
+  </script>
+
 </div>
 {{end}}
