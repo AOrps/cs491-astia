@@ -180,3 +180,15 @@ footer {
 .switch__checkbox:checked + .switch__label::after {
   left: 50%;
 }
+
+
+#cy {
+  width: 800px;
+  height: 800px;
+  display: block;
+  /* height: 100%; */
+  /* width: 100%; */
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+}

@@ -10,11 +10,12 @@ import (
 )
 
 type UserReport struct {
-	Fullname string
-	Number   string
-	Position string
-	Email    string
-	Status   string
+	Fullname  string
+	Number    string
+	Position  string
+	Email     string
+	ReportsTo string
+	Status    string
 }
 
 func GenFakeReportList(n int) []UserReport {

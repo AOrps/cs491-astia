@@ -8,10 +8,11 @@ import (
 )
 
 type FakeUser struct {
-	Fullname string
-	Number   string
-	Position string
-	Email    string
+	Fullname  string
+	Number    string
+	Position  string
+	Email     string
+	ReportsTo string
 }
 
 // ReportsTo string
@@ -33,4 +34,11 @@ func GenFakeUser() FakeUser {
 		Email:    email,
 	}
 	// ReportsTo: "",
+}
+
+func GenFakeUserList() []FakeUser {
+
+	var fakeUseList []FakeUser
+
+	return fakeUseList
 }
